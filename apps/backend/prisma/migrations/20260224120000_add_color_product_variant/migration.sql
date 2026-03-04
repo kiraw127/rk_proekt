@@ -23,7 +23,7 @@ CREATE TABLE "product_variants" (
 
     CONSTRAINT "product_variants_pkey" PRIMARY KEY ("id")
 );
-CREATE UNIQUE INDEX "product_variants_sku_key" ON "product_variants"("sku") WHERE "sku" IS NOT NULL;
+CREATE UNIQUE INDEX "product_variants_sku_key" ON "product_variants"("sku");
 
 -- 3. Migrate products -> variants (preserve price, stock)
 INSERT INTO "product_variants" ("id", "productId", "price", "stock", "imageUrl")
